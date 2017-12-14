@@ -1,0 +1,57 @@
+{% extends "dict/main.html" %}
+
+{% block title %} {{ searchterm }} - {% endblock %} 
+
+{% block content %}
+
+<br>
+{% for Word in word_list %}
+<a href="{% url 'dict:detail' Word.word %}">main entry</a>  <br>
+<font size="12"> -> {{ Word.word }} / {{ Word.reading }}  </font>
+            {{Word.alterword}}   &nbsp; &nbsp; &nbsp;  {{Word.altereadings}} <br>
+
+            {% if Word.common == True %}
+                 <font size="4" color="red">  -  common word </font>
+            {% endif %}
+            
+              <ol>
+             {% for WordTL in Word.meanings.all  reversed%}
+           
+             
+             {{WordTL.word_type}}
+              <li> {{ WordTL.translation }}  </li>
+                   
+             
+            {% endfor %} 
+            </ol>  <br>
+            
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        <span class="current">
+            {{ word_list.number }} of {{ word_list.paginator.num_pages }} //
+        </span>
+        
+        {% if word_list.has_previous %}
+            <a href="?page={{ word_list.previous_page_number }}">previous</a>
+        {% endif %}
+        
+        {% if word_list.has_next %}
+            <a href="?page={{ word_list.next_page_number }}">next</a>
+        {% endif %}
+       
+<!--
+       <br>
+       
+        {% with word_list.number|center:word_list.paginator.num_pages as range %}
+           {% for word_list.number in range  %}
+            <a href="?page={{ forloop.counter }}">  {{ forloop.counter }}</a>
+           {% endfor %}
+         {% endwith %}
+--> 
+          
+    </span>
+</div>
+
+{% endblock %}

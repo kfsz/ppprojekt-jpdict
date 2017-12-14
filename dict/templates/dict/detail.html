@@ -1,0 +1,29 @@
+{% extends "dict/main.html" %}
+
+{% block title %} {{ term }} - {% endblock %} 
+
+{% block content %}
+
+<br>
+{% for Word in word_list %}
+<font size="12"> -> {{ Word.word }} / {{ Word.reading }}  </font>
+            {{Word.alterword}}   &nbsp; &nbsp; &nbsp;  {{Word.altereadings}} <br>
+
+            {% if Word.common == True %}
+                 <font size="4" color="red">  -  common word </font>
+            {% endif %}
+            
+              <ol>
+             {% for WordTL in Word.meanings.all  reversed%}
+           
+             
+             {{WordTL.word_type}}
+              <li> {{ WordTL.translation }}  </li>
+                   
+             
+            {% endfor %} 
+            </ol>  <br>
+            
+{% endfor %}
+
+{% endblock %}

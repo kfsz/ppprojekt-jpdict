@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{% static 'dict/style.css' %}" />
+<link rel="shortcut icon" type="image/bmp" href="{% static 'dict/images/favicon.ico' %}"/>
+<title> {% block title %} {% endblock %} khaooh </title>
+
+</head>
+
+
+<body>
+
+<form method="GET" action="" id="searchform" style="display: inline;">
+    <input class="searchfield" id="searchbox" name="search" type="text" value="{{ request.GET.search }}" placeholder="Search..."/>
+</form>
+
+ &nbsp; 
+<a href="{% url 'dict:index' %}">main site</a>  &nbsp; 
+<a href="{% url 'dict:about' %}">about</a> 
+
+
+<br>
+
+{% block content %} {% endblock %}
+<body>
+
+
+</html>

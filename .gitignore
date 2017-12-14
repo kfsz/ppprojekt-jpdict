@@ -1,0 +1,7 @@
+#local archives
+arc/**
+
+#xml dictionary
+tools/*.xml
+
+*.swp
