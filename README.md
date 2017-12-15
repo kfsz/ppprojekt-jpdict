@@ -1,8 +1,13 @@
 # ppprojekt-jpdict
 
+14/12/17
+deployed and working
+http://kfsz.pythonanywhere.com
+
 12/12/17
 
-    it works! dictionary is in, so basic functionality is done, I guess? (178423 words and 201040 tranlations - JMdict)
+    it works! dictionary is in, so basic functionality is done, I guess?     
+    (178423 words and 201040 tranlations - JMdict)
     
     TODO: 
     
