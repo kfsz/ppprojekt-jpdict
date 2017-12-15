@@ -23,17 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8$t379sy^*3!_(^-8y+mk0ov!!_6s0-2z0r)ugq^2#qh455@%u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'khaooh.azurewebsites.net']
+SESSION_COOKIE_SECURE=True
 
 # Application definition
 
 INSTALLED_APPS = [
     'dict.apps.DictConfig',  #main dictionary
     'rest_framework', #rest api
-    'django.contrib.postgres',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,14 +77,14 @@ WSGI_APPLICATION = 'khaoohprojekt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'khaooh2',
-        'USER': 'postgres',
-        'PASSWORD': 'khaoohprojekt',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-      #  'ENGINE': 'django.db.backends.sqlite3',
-      #  'NAME': 'khaooh',
+      # 'ENGINE': 'django.db.backends.postgresql',
+      # 'NAME': 'khaooh2',
+      #  'USER': 'postgres',
+      #  'PASSWORD': 'khaoohprojekt',
+      #  'HOST': '127.0.0.1',
+      #  'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'khaooh',
       #  'USER': 'postgres',
       #  'PASSWORD': 'khaoohprojekt',
       #  'HOST': '127.0.0.1',

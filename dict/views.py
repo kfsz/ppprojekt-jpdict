@@ -56,7 +56,7 @@ def search(request, word):
     by_word_list = Word.objects.filter(word__iregex=r'{0}'.format(word))    
     by_reading_list = Word.objects.filter(reading__iregex=r'{0}'.format(word))    
     
-    meaning_list = WordTL.objects.filter(translation__iregex=r'\y{0}\y'.format(word))    
+    meaning_list = WordTL.objects.filter(translation__iregex=r'\b{0}\b'.format(word))    
     by_meaning_list = Word.objects.filter(id__in=meaning_list.values('word')).order_by('word')
     
     #whatever, it's fine atm / with kanji update maybe
