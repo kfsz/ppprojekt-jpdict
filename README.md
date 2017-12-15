@@ -1,8 +1,9 @@
 # ppprojekt-jpdict
 
 14/12/17
-deployed and working
-http://kfsz.pythonanywhere.com
+
+    deployed and working
+    http://kfsz.pythonanywhere.com
 
 12/12/17
 
