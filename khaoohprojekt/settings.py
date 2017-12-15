@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8$t379sy^*3!_(^-8y+mk0ov!!_6s0-2z0r)ugq^2#qh455@%u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'khaooh.azurewebsites.net']
 SESSION_COOKIE_SECURE=True
